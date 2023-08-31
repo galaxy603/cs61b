@@ -82,7 +82,15 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        if(A==null) return  B;
+        if(B==null) return  A;
+        if(A!=null&&B!=null){
+            IntList lastofa = A;
+            while (lastofa.rest != null) lastofa = lastofa.rest;
+            lastofa.rest = B;
+
+        }
+        return A;
     }
 
     /**
@@ -90,8 +98,51 @@ public class IntList {
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
     public static IntList catenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        return null;
+        //TODO:  fill in
+        /*传入链表全空返回error*/
+        if(A==null&&B==null) System.out.println("Error");
+
+        /*读入链表A*/
+        IntList C = new IntList();
+        IntList last = C;
+        IntList point = A;
+        while (point!=null){
+            if(point.rest==null){
+                last.first= point.first;
+                break;
+            }
+            else{
+                last.first=point.first;
+                last.rest=new IntList();
+                last=last.rest;
+                point=point.rest;
+            }
+        }
+        /*读取链表B*/
+        point=B;
+
+        /*判断B是否为空，为空直接返回，否则申请新空间*/
+        if(B==null) return C;
+        else{
+            last.rest=new IntList();
+            last=last.rest;
+        }
+        /*读取B*/
+        while (point != null){
+            if(point.rest==null){
+                last.first= point.first;
+                break;
+            }
+            else{
+                last.first=point.first;
+                last.rest=new IntList();
+                last=last.rest;
+                point=point.rest;
+            }
+        }
+
+
+        return C;
     }
 
 
