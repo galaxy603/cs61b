@@ -74,8 +74,7 @@ public  static  void  main(String[] args)
     StdOut.printf("%.2e\n", universeRadius);
     for (int i = 0; i < allPlanets.length; i++) {
         StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
-                allPlanets[i].xxPos, allPlanets[i].yyPos, allPlanets[i].xxVel,
-                allPlanets[i].yyVel, allPlanets[i].mass, allPlanets[i].imgFileName);
+                allPlanets[i].xxPos, allPlanets[i].yyPos, allPlanets[i].xxVel, allPlanets[i].yyVel, allPlanets[i].mass, allPlanets[i].imgFileName);
     }
 
 
